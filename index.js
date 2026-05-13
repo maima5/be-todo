@@ -6,7 +6,9 @@ const app = express()
 const prisma = new PrismaClient()
 
 // Middleware
-app.use(cors())
+app.use(cors({
+  origin: ['https://bloomtodo-omega.vercel.app', 'http://localhost:3000']
+}))
 app.use(express.json())
 
 app.use((req, res, next) => {
